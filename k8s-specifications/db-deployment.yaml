@@ -4,6 +4,7 @@ metadata:
   labels:
     app: db
   name: db
+  namespace: vote
 spec:
   replicas: 1
   selector:
@@ -15,7 +16,7 @@ spec:
         app: db
     spec:
       containers:
-      - image: postgres:15-alpine
+      - image: postgres:9.4
         name: postgres
         env:
         - name: POSTGRES_USER
